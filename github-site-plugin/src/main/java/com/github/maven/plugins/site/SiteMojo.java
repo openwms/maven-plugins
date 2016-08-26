@@ -353,6 +353,9 @@ public class SiteMojo extends GitHubProjectMojo {
 				createNoJekyll = false;
 			entry.setType(TYPE_BLOB);
 			entry.setMode(MODE_BLOB);
+			if (isInfo()) {
+			    info(".");
+			}
 			entry.setSha(createBlob(service, repository, path));
 			entries.add(entry);
 		}
